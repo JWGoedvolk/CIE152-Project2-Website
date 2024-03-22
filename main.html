@@ -13,12 +13,17 @@
                 <button onclick="displayMessage()">Display Message</button>
             </form>
         </div>
-        <div  id="inputMsg"></div>
+        <div>
+            <p id="inputMsg">user input</p>
+            <p id="duckAnser">duck ansewr</p>
+        </div>
         <script>
             function displayMessage() {
-                var userInput = document.getElementById("Input").value;
+                var userInput = document.getElementById("input").value;
+                console.log(userInput);
                 var inputMsgElement = document.getElementById("inputMsg");
                 inputMsgElement.textContent = userInput; 
+                document.getElementById("userInput").innerHTML = userInput;
             }
         </script>
     </body>
