@@ -8,7 +8,16 @@
         <div id="Input">
             <form id="TextInput">
                 <input type="text" name="input", placeholder="What Problem Do You Need Help With">
+                <button onclick="displayMessage()">Display Message</button>
             </form>
         </div>
+        <div  id="inputMsg"></div>
+        <script>
+            function displayMessage() {
+                var userInput = document.getElementById("Input").value;
+                var inputMsgElement = document.getElementById("inputMsg");
+                inputMsgElement.textContent = userInput; 
+            }
+        </script>
     </body>
 </html>
