@@ -1,0 +1,19 @@
+#Title {
+    text-align: center;
+}
+#Input {
+    position: absolute;
+    bottom: 5%;
+    left: 25%;
+    height: 5%;
+    width: 50%;
+}
+
+#TextInput {
+    
+    width: 100%;
+}
+
+input {
+    width: 100%;
+}
