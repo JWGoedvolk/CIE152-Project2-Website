@@ -2,7 +2,14 @@
     text-align: center;
 }
 #Input {
-    text-align: center;
-    position: relative;
-    top: 540px;
+    position: absolute;
+    margin: auto;
+    /*text-align: center;*/
+    height: 5%;
+    width: 100%;
+    bottom: 10px;
+}
+
+#TextInput {
+    width: 100%;
 }
