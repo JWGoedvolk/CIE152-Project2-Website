@@ -6,11 +6,11 @@
             <h1 id="Title">Cody, The Rubber Duck Bug Snatcher!</h1>
         </div>
         <div id="Input">
-            <form id="TextInput">
-                <input type="text" name="input", placeholder="What Problem Do You Need Help With">
+            <form id="TextInput", method="get">
+                <input type="text" name="input", placeholder="What Problem Do You Need Help With", id="textInput">
             </form>
             <form id="Display">
-                <button onclick="displayMessage()">Display Message</button>
+                <button type="button", onclick="displayMessage()">Display Message</button>
             </form>
         </div>
         <div>
@@ -19,11 +19,9 @@
         </div>
         <script>
             function displayMessage() {
-                var userInput = document.getElementById("input").value;
-                console.log(userInput);
-                var inputMsgElement = document.getElementById("inputMsg");
-                inputMsgElement.textContent = userInput; 
-                document.getElementById("userInput").innerHTML = userInput;
+                let userInput = document.getElementById("textInput").value;
+                //console.log(userInput);
+                document.getElementById("inputMsg").innerHTML = userInput;
             }
         </script>
     </body>
