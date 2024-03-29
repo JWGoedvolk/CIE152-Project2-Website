@@ -27,11 +27,34 @@
                 userInput = document.getElementById("textInput").value;
                 console.log("Input: " + userInput);
                 document.getElementById("inputMsg").innerHTML = userInput;
-                const keywords = {"debugging" : 
-                ["If you are using script, use //",  
-                "If you are using HTML,use <!--   -->"],
-                "button": ["Type = 'button'"],
-                "showing":["Refresh the page"],
+
+                const keywords = {
+                    "debugging" : 
+                        [
+                            "For debugging I would suggest",
+                            "If you are using Javascript, use //",  
+                            "If you are using HTML,use <!--   -->"
+                        ],
+                    "button": 
+                        [
+                            "For buttons not calling their functions in HTML, ",
+                            "Setting the type for your input field to 'button'",
+                            "For buttons not calling their function in Unity, ",
+                            "Making sure from the inspector that the function is set to the correct one",
+                        ],
+                    "showing":
+                        [
+                            "For changes to a website, ",
+                            "Try refreshing the page",
+                            "For Unity variables not showing in the inspector",
+                            "Checking to see if they have '[SerializeField]' if they are private or setting them to public"
+                        ],
+                    "not moving": 
+                        [
+                            "For Unity objects, ",
+                            "Do they have the script causing them to move attached",
+                            "The function causing them to move is being called somewhere in a script"
+                        ]
                 }
 
                 var succes = false;
@@ -41,17 +64,17 @@
                     if (userInput.includes(element)) {
                         console.log("Found keyword");
                         succes = true;
-                        var answer = "Sure I can help with that! Have you tried: "
-                        document.getElementById("duckAnser").innerHTML = answer;
-
-                        var solutionNumber = 1;
+                        if (succes)
+                        {
+                            var answer = "Sure I can help with that! Have you tried: "
+                            document.getElementById("duckAnser").innerHTML = answer;
+                        }
                         var solutions = keywords[element]
                         console.log("Solution: " + solutions)
                         for (const solution in solutions) {
                             console.log(solution);
                             document.getElementById("duckAnser").innerHTML += "<br>"
-                            document.getElementById("duckAnser").innerHTML += solutionNumber + ": " + solutions[solution];
-                            solutionNumber++;
+                            document.getElementById("duckAnser").innerHTML += solutions[solution];
                         }
 
                         document.getElementById("duckAnser").style.borderStyle = "solid";
