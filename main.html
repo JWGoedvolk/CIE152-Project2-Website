@@ -25,10 +25,17 @@
             function displayMessage() {
                 var userInput = "";
                 userInput = document.getElementById("textInput").value;
+                userInput = userInput.toLowerCase();
                 console.log("Input: " + userInput);
                 document.getElementById("inputMsg").innerHTML = userInput;
 
                 const keywords = {
+                    "who made you this way": 
+                    [
+                        "I was lovingly and painstakingly made by:",
+                        "  JW,",
+                        "  Leon"
+                    ],
                     "debugging" : 
                         [
                             "For debugging I would suggest",
