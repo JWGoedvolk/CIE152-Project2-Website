@@ -25,7 +25,7 @@
             function displayMessage() {
                 var userInput = "";
                 userInput = document.getElementById("textInput").value;
-                console.log(userInput);
+                console.log("Input: " + userInput);
                 document.getElementById("inputMsg").innerHTML = userInput;
                 const keywords = {"debugging" : 
                 ["If you are using script, use //",  
@@ -34,23 +34,32 @@
                 "showing":["Refresh the page"],
                 }
 
+                var succes = false;
                 for (let index = 0; index < Object.keys(keywords).length; index++)  {
                     const element = Object.keys(keywords)[index];
+                    console.log("Looking for: " + element);
                     if (userInput.includes(element)) {
+                        console.log("Found keyword");
+                        succes = true;
                         var answer = "Sure I can help with that! Have you tried: "
                         document.getElementById("duckAnser").innerHTML = answer;
 
                         var solutionNumber = 1;
-                        for (const solution in keywords.debugging) {
-                            const element = keywords.debugging[solution];
+                        var solutions = keywords[element]
+                        console.log("Solution: " + solutions)
+                        for (const solution in solutions) {
+                            console.log(solution);
                             document.getElementById("duckAnser").innerHTML += "<br>"
-                            document.getElementById("duckAnser").innerHTML += solutionNumber + ": " + element;
+                            document.getElementById("duckAnser").innerHTML += solutionNumber + ": " + solutions[solution];
                             solutionNumber++;
                         }
 
                         document.getElementById("duckAnser").style.borderStyle = "solid";
-                        
                     }
+                }
+                if (!succes) {
+                    document.getElementById("duckAnser").style.borderStyle = "solid";
+                    document.getElementById("duckAnser").innerHTML = "Unfortunatly I am but a mortal and don't know everything. I have no answer for your predicament! Perhaps I can help you solve a different problem!"
                 }
                 
             };
