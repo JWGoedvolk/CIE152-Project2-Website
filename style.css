@@ -1,5 +1,10 @@
+body {
+    background-color: #ead848;
+}
+
 #Title {
     text-align: center;
+    font-size: xx-large;
 }
 #Input {
     position: absolute;
@@ -10,20 +15,51 @@
 }
 
 #TextInput {
-    
+    margin: 0px;
+    border: 0px;
+    padding: 5px;
     width: 100%;
 }
 
 #Display {
-
     text-align: center;
 }
 
-input {
+input[type=text] {
+    background-color: #b8a310;
+    color: white;
+
     width: 100%;
     height: 100%;
 }
 
 #userInput {
     text-align: center;
+}
+
+#inputMsg {
+    border: 3px;
+    border-style: solid;
+    border-color: darkgoldenrod;
+
+    text-align: left;
+    padding: 5px;
+
+    position: relative;
+    width: 50%;
+    left: 25%;
+    right: 25%;
+}
+
+#duckAnser {
+    border: 3px;
+    border-color: darkgoldenrod;
+
+    text-align: right;
+    padding: 5px;
+
+    position: relative;
+    width: 50%;
+    left: 25%;
+    right: 25%;
 }

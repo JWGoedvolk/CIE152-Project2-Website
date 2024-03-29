@@ -14,20 +14,46 @@
             </form>
         </div>
         <div>
-            <p id="inputMsg">user input</p>
-            <p id="duckAnser">duck ansewr</p>
+            <p id="inputMsg">
+                user input
+            </p>
+            <p id="duckAnser">
+
+            </p>
         </div>
         <script>
             function displayMessage() {
-                let userInput = document.getElementById("textInput").value;
-                //console.log(userInput);
+                var userInput = "";
+                userInput = document.getElementById("textInput").value;
+                console.log(userInput);
                 document.getElementById("inputMsg").innerHTML = userInput;
                 const keywords = {"debugging" : 
                 ["If you are using script, use //",  
                 "If you are using HTML,use <!--   -->"],
                 "button": ["Type = 'button'"],
                 "showing":["Refresh the page"],
-                }};   
+                }
+
+                for (let index = 0; index < Object.keys(keywords).length; index++)  {
+                    const element = Object.keys(keywords)[index];
+                    if (userInput.includes(element)) {
+                        var answer = "Sure I can help with that! Have you tried: "
+                        document.getElementById("duckAnser").innerHTML = answer;
+
+                        var solutionNumber = 1;
+                        for (const solution in keywords.debugging) {
+                            const element = keywords.debugging[solution];
+                            document.getElementById("duckAnser").innerHTML += "<br>"
+                            document.getElementById("duckAnser").innerHTML += solutionNumber + ": " + element;
+                            solutionNumber++;
+                        }
+
+                        document.getElementById("duckAnser").style.borderStyle = "solid";
+                        
+                    }
+                }
+                
+            };
         </script>
     </body>
 </html>
